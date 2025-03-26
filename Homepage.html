@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batangas Natural Product Manufacturing</title>
+    <link rel="stylesheet" href="design/styles.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        /* Base Styles */
+        :root {
+          --primary: #10b981;
+          --primary-dark: #059669;
+          --primary-light: #d1fae5;
+          --secondary: #1f2937;
+          --white: #ffffff;
+          --black: #000000;
+          --gray-50: #f9fafb;
+          --gray-100: #f3f4f6;
+          --gray-200: #e5e7eb;
+          --gray-300: #d1d5db;
+          --gray-400: #9ca3af;
+          --gray-500: #6b7280;
+          --gray-600: #4b5563;
+          --gray-700: #374151;
+          --gray-800: #1f2937;
+          --gray-900: #111827;
+          --radius: 0.5rem;
+          --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        html {
+          scroll-behavior: smooth;
+        }
+
+        body {
+          font-family: var(--font-sans);
+          line-height: 1.6;
+          color: var(--gray-800);
+          background-color: var(--white);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+          font-weight: 700;
+          line-height: 1.2;
+          margin-bottom: 0.5rem;
+        }
+
+        a {
+          color: var(--primary);
+          text-decoration: none;
+          transition: color 0.2s ease;
+        }
+
+        a:hover {
+          color: var(--primary-dark);
+        }
+
+        ul {
+          list-style-position: inside;
+        }
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border-width: 0;
+        }
+
+        /* Layout */
+        .container {
+          width: 100%;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        .section {
+          padding: 4rem 0;
+        }
+
+        .section-title {
+          font-size: 2rem;
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+
+        .text-center {
+          text-align: center;
+        }
+
+        .mt-12 {
+          margin-top: 3rem;
+        }
+
+        .w-full {
+          width: 100%;
+        }
+
+        /* Background Colors */
+        .bg-white {
+          background-color: var(--white);
+        }
+
+        .bg-light {
+          background-color: var(--gray-50);
+        }
+
+        .bg-primary {
+          background-color: var(--primary);
+        }
+
+        .bg-accent-light {
+          background-color: var(--primary-light);
+        }
+
+        /* Text Colors */
+        .text-white {
+          color: var(--white);
+        }
+
+        /* Header */
+        .header {
+          background-color: var(--white);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          position: sticky;
+          top: 0;
+          z-index: 50;
+        }
+
+        .header-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          height: 4rem;
+        }
+
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 700;
+          font-size: 1.25rem;
+          color: var(--gray-800);
+        }
+
+        .logo-icon {
+          color: var(--primary);
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        .desktop-nav {
+          display: none;
+        }
+
+        .desktop-button {
+          display: none;
+        }
+
+        .mobile-menu-btn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: none;
+          border: none;
+          cursor: pointer;
+          color: var(--gray-700);
+        }
+
+        .menu-icon {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        .mobile-nav {
+          display: none;
+          background-color: var(--white);
+          border-top: 1px solid var(--gray-200);
+        }
+
+        .mobile-nav.active {
+          display: block;
+        }
+
+        .mobile-nav-content {
+          display: flex;
+          flex-direction: column;
+          padding: 1rem 0;
+        }
+
+        .mobile-nav-content a {
+          padding: 0.5rem 0;
+          color: var(--gray-700);
+        }
+
+        .mobile-nav-content a.active {
+          color: var(--primary);
+        }
+
+        .mobile-btn {
+          margin-top: 1rem;
+        }
+
+        @media (min-width: 768px) {
+          .desktop-nav {
+            display: flex;
+            gap: 2rem;
+          }
+          
+          .desktop-nav a {
+            color: var(--gray-700);
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color 0.2s ease;
+          }
+          
+          .desktop-nav a:hover {
+            color: var(--primary);
+          }
+          
+          .desktop-nav a.active {
+            color: var(--primary);
+          }
+          
+          .desktop-button {
+            display: block;
+          }
+          
+          .mobile-menu-btn {
+            display: none;
+          }
+        }
+
+        /* Buttons */
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0.5rem 1rem;
+          font-weight: 500;
+          border-radius: var(--radius);
+          cursor: pointer;
+          transition: all 0.2s ease;
+          text-align: center;
+        }
+
+        .btn-icon {
+          margin-left: 0.5rem;
+          width: 1rem;
+          height: 1rem;
+        }
+
+        .btn-primary {
+          background-color: var(--primary);
+          color: var(--white);
+          border: none;
+        }
+
+        .btn-primary:hover {
+          background-color: var(--primary-dark);
+          color: var(--white);
+        }
+
+        .btn-outline {
+          background-color: transparent;
+          color: var(--gray-700);
+          border: 1px solid var(--gray-300);
+        }
+
+        .btn-outline:hover {
+          background-color: var(--gray-100);
+        }
+
+        .btn-ghost {
+          background-color: transparent;
+          color: var(--gray-700);
+          border: none;
+        }
+
+        .btn-ghost:hover {
+          background-color: var(--gray-100);
+        }
+
+        .btn-white {
+          background-color: var(--white);
+          color: var(--primary);
+          border: none;
+        }
+
+        .btn-white:hover {
+          background-color: var(--gray-100);
+        }
+
+        .btn-outline-white {
+          background-color: transparent;
+          color: var(--white);
+          border: 1px solid var(--white);
+        }
+
+        .btn-outline-white:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-lg {
+          padding: 0.75rem 1.5rem;
+          font-size: 1.125rem;
+        }
+
+        /* Hero Section */
+        .hero {
+          position: relative;
+          background-size: cover;
+          background-position: center;
+          padding: 5rem 0;
+          color: var(--white);
+        }
+
+        .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 10;
+          text-align: center;
+          max-width: 48rem;
+          margin: 0 auto;
+        }
+
+        .hero-content h1 {
+          font-size: 2.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+          font-size: 1.125rem;
+          margin-bottom: 2rem;
+          max-width: 36rem;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        @media (min-width: 768px) {
+          .hero {
+            padding: 8rem 0;
+          }
+          
+          .hero-content h1 {
+            font-size: 3rem;
+          }
+        }
+
+        /* Cards */
+        .card {
+          background-color: var(--white);
+          border-radius: var(--radius);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .card-header {
+          padding: 1.5rem 1.5rem 0.75rem;
+        }
+
+        .card-image {
+          width: 100%;
+          height: 12rem;
+          background-size: cover;
+          background-position: center;
+          border-radius: calc(var(--radius) - 2px);
+          margin-bottom: 1rem;
+        }
+
+        .card-title {
+          font-size: 1.25rem;
+          margin-bottom: 0.25rem;
+        }
+
+        .card-subtitle {
+          color: var(--gray-500);
+          font-size: 0.875rem;
+        }
+
+        .card-body {
+          padding: 0.75rem 1.5rem;
+          flex-grow: 1;
+        }
+
+        .card-footer {
+          padding: 0.75rem 1.5rem 1.5rem;
+        }
+
+        .card-icon {
+          width: 3rem;
+          height: 3rem;
+          color: var(--primary);
+          margin-bottom: 1rem;
+        }
+
+        /* Grids */
+        .product-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .news-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          max-width: 48rem;
+          margin: 0 auto;
+        }
+
+        .nav-card-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .media-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          max-width: 60rem;
+          margin: 0 auto;
+        }
+
+        .sustainability-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .partnership-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .success-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          max-width: 60rem;
+          margin: 0 auto;
+        }
+
+        @media (min-width: 768px) {
+          .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          
+          .news-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          
+          .nav-card-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          
+          .media-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          
+          .sustainability-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          
+          .partnership-grid {
+            grid-template-columns: repeat(3, 1fr);
+          }
+          
+          .success-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .product-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+
+        /* Nav Card */
+        .nav-card {
+          display: block;
+          color: inherit;
+          transition: transform 0.3s ease;
+        }
+
+        .nav-card:hover {
+          transform: translateY(-5px);
+        }
+
+        /* Milestone Items */
+        .milestone-list {
+          display: flex;
+          flex-direction: column;
+          gap: 3rem;
+          max-width: 60rem;
+          margin: 0 auto;
+        }
+
+        .milestone-item {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .milestone-image {
+          width: 100%;
+          height: 16rem;
+          background-size: cover;
+          background-position: center;
+          border-radius: var(--radius);
+        }
+
+        @media (min-width: 768px) {
+          .milestone-item {
+            flex-direction: row;
+            align-items: center;
+          }
+          
+          .milestone-item.reverse {
+            flex-direction: row-reverse;
+          }
+          
+          .milestone-image {
+            width: 50%;
+            height: auto;
+            aspect-ratio: 3/2;
+          }
+          
+          .milestone-content {
+            width: 50%;
+          }
+        }
+
+        /* Case Study */
+        .case-study-card {
+          background-color: var(--white);
+          border-radius: var(--radius);
+          box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+          overflow: hidden;
+          max-width: 60rem;
+          margin: 0 auto;
+        }
+
+        .case-study-image {
+          width: 100%;
+          height: 16rem;
+          background-size: cover;
+          background-position: center;
+        }
+
+        .case-study-header {
+          padding: 1.5rem 1.5rem 0.75rem;
+        }
+
+        .case-study-subtitle {
+          color: var(--gray-500);
+        }
+
+        .case-study-content {
+          padding: 0.75rem 1.5rem 1.5rem;
+        }
+
+        .case-study-content h4 {
+          margin-top: 1.5rem;
+          font-size: 1.125rem;
+        }
+
+        .case-study-content ul {
+          margin: 1rem 0;
+          list-style-type: disc;
+          padding-left: 1.5rem;
+        }
+
+        .case-study-content li {
+          margin-bottom: 0.5rem;
+        }
+
+        .case-study-action {
+          margin-top: 1.5rem;
+        }
+
+        /* Media Contact */
+        .media-contact {
+          text-align: center;
+          margin-top: 3rem;
+        }
+
+        .media-contact p {
+          max-width: 36rem;
+          margin: 0 auto 1.5rem;
+        }
+
+        .quote {
+          font-style: italic;
+          margin-bottom: 1.5rem;
+        }
+
+        /* Process Sections */
+        .process-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          max-width: 60rem;
+          margin: 0 auto 3rem;
+        }
+
+        .process-image {
+          width: 100%;
+          height: 16rem;
+          background-size: cover;
+          background-position: center;
+          border-radius: var(--radius);
+        }
+
+        .process-content ul {
+          margin: 1rem 0;
+          list-style-type: disc;
+          padding-left: 1.5rem;
+        }
+
+        .process-content li {
+          margin-bottom: 0.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .process-grid {
+            flex-direction: row;
+            align-items: center;
+          }
+          
+          .process-grid.reverse {
+            flex-direction: row-reverse;
+          }
+          
+          .process-image {
+            width: 50%;
+            height: auto;
+            aspect-ratio: 3/2;
+          }
+          
+          .process-content {
+            width: 50%;
+          }
+        }
+
+        /* Facility Tour */
+        .facility-tour {
+          max-width: 60rem;
+          margin: 0 auto;
+        }
+
+        .video-container {
+          margin-bottom: 2rem;
+        }
+
+        .video-placeholder {
+          width: 100%;
+          height: 24rem;
+          background-size: cover;
+          background-position: center;
+          border-radius: var(--radius);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .tour-description {
+          margin-bottom: 2rem;
+        }
+
+        .facility-gallery {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 1rem;
+          margin-bottom: 2rem;
+        }
+
+        .gallery-image {
+          height: 12rem;
+          background-size: cover;
+          background-position: center;
+          border-radius: var(--radius);
+        }
+
+        .tour-booking {
+          margin-top: 2rem;
+        }
+
+        .tour-booking p {
+          margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+          .facility-gallery {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+
+        /* Quality Section */
+        .quality-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          max-width: 60rem;
+          margin: 0 auto;
+        }
+
+        .process-steps {
+          list-style: none;
+        }
+
+        .process-step {
+          display: flex;
+          margin-bottom: 1rem;
+        }
+
+        .step-number {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 1.5rem;
+          height: 1.5rem;
+          background-color: var(--primary-light);
+          color: var(--primary-dark);
+          font-weight: 700;
+          border-radius: 9999px;
+          margin-right: 0.75rem;
+          margin-top: 0.125rem;
+        }
+
+        @media (min-width: 768px) {
+          .quality-grid {
+            flex-direction: row;
+          }
+          
+          .quality-content {
+            width: 50%;
+          }
+          
+          .quality-process {
+            width: 50%;
+          }
+        }
+
+        /* Investment Sections */
+        .investment-grid {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+          max-width: 60rem;
+          margin: 0 auto 3rem;
+        }
+
+        .investment-image {
+          width: 100%;
+          height: 16rem;
+          background-size: cover;
+          background-position: center;
+          border-radius: var(--radius);
+        }
+
+        .investment-content ul {
+          margin: 1rem 0;
+          list-style-type: disc;
+          padding-left: 1.5rem;
+        }
+
+        .investment-content li {
+          margin-bottom: 0.5rem;
+        }
+
+        .emerging-sectors {
+          margin: 1.5rem 0;
+        }
+
+        .sector-item {
+          background-color: var(--primary-light);
+          padding: 1rem;
+          border-radius: var(--radius);
+          margin-bottom: 1rem;
+        }
+
+        .sector-item h4 {
+          color: var(--primary-dark);
+        }
+
+        @media (min-width: 768px) {
+          .investment-grid {
+            flex-direction: row;
+            align-items: center;
+          }
+          
+          .investment-grid.reverse {
+            flex-direction: row-reverse;
+          }
+          
+          .investment-image {
+            width: 50%;
+            height: auto;
+            aspect-ratio: 3/2;
+          }
+          
+          .investment-content {
+            width: 50%;
+          }
+        }
+
+        /* CTA Section */
+        .cta-text {
+          font-size: 1.125rem;
+          max-width: 36rem;
+          margin: 0 auto 2rem;
+        }
+
+        .cta-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          max-width: 24rem;
+          margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+          .cta-buttons {
+            flex-direction: row;
+            justify-content: center;
+          }
+        }
+
+        /* Footer */
+        .footer {
+          background-color: var(--gray-900);
+          color: var(--gray-400);
+          padding: 3rem 0 1.5rem;
+        }
+
+        .footer-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 2rem;
+          margin-bottom: 3rem;
+        }
+
+        .footer-logo {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-weight: 700;
+          font-size: 1.25rem;
+          color: var(--white);
+          margin-bottom: 1rem;
+        }
+
+        .footer-logo-icon {
+          color: var(--primary);
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+
+        .footer-text {
+          margin-bottom: 1rem;
+        }
+
+        .social-links {
+          display: flex;
+          gap: 1rem;
+        }
+
+        .social-icon {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+
+        .footer-title {
+          color: var(--white);
+          font-size: 1.125rem;
+          margin-bottom: 1.5rem;
+        }
+
+        .footer-links {
+          list-style: none;
+        }
+
+        .footer-links li {
+          margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+          color: var(--gray-400);
+          transition: color 0.2s ease;
+        }
+
+        .footer-links a:hover {
+          color: var(--white);
+        }
+
+        .contact-info {
+          list-style: none;
+        }
+
+        .contact-item {
+          display: flex;
+          margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+          color: var(--primary);
+          width: 1.25rem;
+          height: 1.25rem;
+          margin-right: 0.75rem;
+          margin-top: 0.25rem;
+          flex-shrink: 0;
+        }
+
+        .footer-bottom {
+          text-align: center;
+          padding-top: 1.5rem;
+          border-top: 1px solid var(--gray-800);
+        }
+
+        @media (min-width: 768px) {
+          .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .footer-grid {
+            grid-template-columns: repeat(4, 1fr);
+          }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <!-- Logo -->
+                <a href="Homepage.html" class="logo">
+                    <i data-lucide="leaf" class="logo-icon"></i>
+                    <span>Batangas Natural</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <nav class="desktop-nav">
+                    <a href="Homepage.html" class="active">Home</a>
+                    <a href="Achievements.html">Achievements</a>
+                    <a href="Production.html">Production</a>
+                    <a href="Oppurtinities.html">Opportunities</a>
+                    <a href="Contact.html">Contact</a>
+                </nav>
+
+                <!-- Contact Button (Desktop) -->
+                <div class="desktop-button">
+                    <a href="Contact.html" class="btn btn-primary">Get in Touch</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+                    <i data-lucide="menu" class="menu-icon"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div class="mobile-nav" id="mobileNav">
+            <div class="container">
+                <nav class="mobile-nav-content">
+                    <a href="Homepage.html" class="active">Home</a>
+                    <a href="Achievements.html">Achievements</a>
+                    <a href="Production.html">Production</a>
+                    <a href="Oppurtinities.html">Opportunities</a>
+                    <a href="Contact.html">Contact</a>
+                    <a href="Contact.html" class="btn btn-primary mobile-btn">Get in Touch</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('https://via.placeholder.com/1600x800');">
+            <div class="hero-overlay"></div>
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Batangas Natural Product Manufacturing</h1>
+                    <p>Discover the sustainable and innovative natural product manufacturing hub of the Philippines</p>
+                    <a href="#featured-products" class="btn btn-primary">
+                        Explore Our Products
+                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Welcome Message -->
+        <section class="section bg-white">
+            <div class="container">
+                <div class="section-content text-center">
+                    <h2>Welcome to Batangas</h2>
+                    <p>
+                        Nestled in the heart of the Philippines, Batangas is a province blessed with abundant natural resources and a rich cultural heritage. Our lush landscapes, from verdant mountains to pristine coastlines, provide the perfect environment for sustainable natural product manufacturing.
+                    </p>
+                    <p>
+                        For generations, the industrious people of Batangas have harnessed these gifts of nature, combining traditional knowledge with modern innovation to create products that are not only of exceptional quality but also environmentally responsible. Today, we invite you to discover the unique offerings that make Batangas a thriving hub for natural product manufacturing.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section id="featured-products" class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="product-grid">
+                    <!-- Kapeng Barako -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                            <h3 class="card-title">Kapeng Barako</h3>
+                            <p class="card-subtitle">Liberica Coffee</p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Experience the bold, distinctive flavor of Batangas' famous Kapeng Barako. This unique coffee variety has been a staple of Batangueño culture for generations.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+                    </div>
+
+                    <!-- Coconut Products -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                            <h3 class="card-title">Coconut-Based Products</h3>
+                            <p class="card-subtitle">Sustainable & Versatile</p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                From virgin coconut oil to coco sugar and personal care items, our coconut-based products offer health benefits while supporting sustainable farming practices.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+                    </div>
+
+                    <!-- Honey & Dairy -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                            <h3 class="card-title">Honey & Dairy Products</h3>
+                            <p class="card-subtitle">Locally Sourced</p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Our locally sourced honey and dairy products reflect the dedication of Batangas farmers to quality and sustainability, preserving traditional farming methods.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+                    </div>
+
+                    <!-- Turmeric Products -->
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-image" style="background-image: url('https://via.placeholder.com/400x300');"></div>
+                            <h3 class="card-title">Turmeric & Herbal Products</h3>
+                            <p class="card-subtitle">Traditional Wellness</p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Enterprises like Mira's Turmeric Products showcase how traditional herbal knowledge has evolved into thriving businesses that promote health and wellness.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline">Learn More</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Latest News -->
+        <section class="section bg-white">
+            <div class="container">
+                <h2 class="section-title">Latest News</h2>
+                <div class="news-grid">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">D&L Industries Opens PHP10.5B Plant</h3>
+                            <p class="card-subtitle">June 15, 2023</p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                D&L Industries has inaugurated its PHP10.5-billion manufacturing plant in Batangas, marking a significant advancement in the province's manufacturing capabilities.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline">Read Full Story</button>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Batangas City Aims for Carbon Neutrality</h3>
+                            <p class="card-subtitle">May 22, 2023</p>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Batangas City has launched an ambitious initiative to become the first carbon-neutral city in the Philippines by 2030, demonstrating a strong commitment to environmental sustainability.
+                            </p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline">Read Full Story</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Cards -->
+        <section class="section bg-accent-light">
+            <div class="container">
+                <h2 class="section-title">Explore More</h2>
+                <div class="nav-card-grid">
+                    <a href="Achievements.html" class="nav-card">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <i data-lucide="award" class="card-icon"></i>
+                                <h3 class="card-title">Achievements</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-center">
+                                    Discover the milestones and success stories that have shaped Batangas' manufacturing landscape.
+                                </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <span class="btn btn-ghost">
+                                    View Achievements
+                                    <i data-lucide="arrow-right" class="btn-icon"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="Production.html" class="nav-card">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <i data-lucide="factory" class="card-icon"></i>
+                                <h3 class="card-title">Production</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-center">
+                                    Learn about our sustainable manufacturing processes, facilities, and quality assurance practices.
+                                </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <span class="btn btn-ghost">
+                                    Explore Production
+                                    <i data-lucide="arrow-right" class="btn-icon"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+
+                    <a href="Oppurtinities.html" class="nav-card">
+                        <div class="card">
+                            <div class="card-header text-center">
+                                <i data-lucide="briefcase" class="card-icon"></i>
+                                <h3 class="card-title">Opportunities</h3>
+                            </div>
+                            <div class="card-body">
+                                <p class="text-center">
+                                    Explore investment prospects and partnership opportunities in Batangas' thriving manufacturing sector.
+                                </p>
+                            </div>
+                            <div class="card-footer text-center">
+                                <span class="btn btn-ghost">
+                                    Discover Opportunities
+                                    <i data-lucide="arrow-right" class="btn-icon"></i>
+                                </span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Company Info -->
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i data-lucide="leaf" class="footer-logo-icon"></i>
+                        <span>Batangas Natural</span>
+                    </div>
+                    <p class="footer-text">
+                        Promoting sustainable and innovative natural product manufacturing in Batangas, Philippines.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i data-lucide="facebook" class="social-icon"></i>
+                            <span class="sr-only">Facebook</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="twitter" class="social-icon"></i>
+                            <span class="sr-only">Twitter</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="instagram" class="social-icon"></i>
+                            <span class="sr-only">Instagram</span>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i data-lucide="linkedin" class="social-icon"></i>
+                            <span class="sr-only">LinkedIn</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="Homepage.html">Home</a></li>
+                        <li><a href="Achievements.html">Achievements</a></li>
+                        <li><a href="Production.html">Production</a></li>
+                        <li><a href="Oppurtinities.html">Opportunities</a></li>
+                        <li><a href="Contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Our Products</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Kapeng Barako</a></li>
+                        <li><a href="#">Coconut Products</a></li>
+                        <li><a href="#">Honey & Dairy</a></li>
+                        <li><a href="#">Turmeric & Herbal</a></li>
+                        <li><a href="#">All Products</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact Us</h3>
+                    <ul class="contact-info">
+                        <li class="contact-item">
+                            <i data-lucide="map-pin" class="contact-icon"></i>
+                            <span>Batangas Provincial Capitol, Batangas City, Philippines</span>
+                        </li>
+                        <li class="contact-item">
+                            <i data-lucide="phone" class="contact-icon"></i>
+                            <span>+63 (43) 123 4567</span>
+                        </li>
+                        <li class="contact-item">
+                            <i data-lucide="mail" class="contact-icon"></i>
+                            <span>info@batangasnatural.ph</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> Batangas Natural Product Manufacturing. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+            const mobileNav = document.getElementById('mobileNav');
+            const menuIcon = this.querySelector('.menu-icon');
+            
+            if (mobileNav.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                menuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                mobileNav.classList.add('active');
+                menuIcon.setAttribute('data-lucide', 'x');
+            }
+            
+            lucide.createIcons();
+        });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
